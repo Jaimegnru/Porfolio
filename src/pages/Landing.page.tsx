@@ -15,7 +15,7 @@ export const Landing = () => {
       <div className="flex">
         <img src={image} className="h-50 w-50" />
         <h1>Hola soy Jaime y este es mi porfolio</h1>
-        <h2>¡Espero que les guste!</h2>
+        <h2>¡Espero que les guste! </h2>
       </div>
     </main>
   )
