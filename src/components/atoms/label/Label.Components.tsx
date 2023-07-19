@@ -9,8 +9,8 @@ interface LabelProps {
 }
 export const Label: React.FC<LabelProps> = ({ label, name, type= "text", value, onChange}) => {
   //variables para almacenar las clases en Tailwind
-  let labelStile = "text-black";
-  let inputStyle = "border-2 rounded-lg border-gray-500";
+  let labelStile = "text-sky-600 font-medium";
+  let inputStyle = "border-2 rounded-lg border-sky-600 text-sky-600 font-medium";
 
 
   return (
