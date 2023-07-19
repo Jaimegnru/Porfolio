@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Landing } from '../pages/Landing.page'
 import { Login } from '../pages/Login.page'
 import { Registro } from '../pages/Register.page';
@@ -16,6 +16,7 @@ export const AppRoutes = () => {
             <Route element={<ProtectedRoutes/>}>
                 <Route path='/weather' element={<Weather />} />
             </Route>
+            <Route path={"/Porfolio"} element={<Navigate to={"/"}/>}/>
         </Routes>
     )
 }
