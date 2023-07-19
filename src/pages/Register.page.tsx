@@ -53,11 +53,11 @@ export const Registro = () => {
         <Button text="ESTUDIOS" />
         <Button text="EXPERIENCIAS" />
         <Button text="CONTACTO" />
-        <Button text="WEATHER" onClick={() => navigate('/weather')}/>
+        <Button text="WEATHER" onClick={() => navigate('/weather')} />
         <Button text="LOGIN" onClick={() => navigate('/login')} />
       </header>
-      <form onSubmit={onSubmit}>
-        <div className="flex flex-col p-4 rounded bg-sky-200 w-2/6 items-center justify-center gap-5 border-2 border-solid border-sky-600">
+
+      <div className="flex flex-col p-4 rounded bg-sky-200 w-2/6 items-center justify-center gap-5 border-2 border-solid border-sky-600">
           <div>
             <h1 className="text-center text-2xl text-sky-600 font-medium">REGISTRARSE</h1>
           </div>
@@ -71,11 +71,11 @@ export const Registro = () => {
             <p className="text-sky-600 font-medium underline cursor-pointer" onClick={() => navigate('/login')}>Inicia sesion</p>
           </div>
           <div className="flex justify-between w-full">
-          <Button text="REGISTRAR" variant="filled" />
+            <Button text="REGISTRAR" variant="filled" onClick={onSubmit}/>
             <Button text="RESET" variant="filled" onClick={resetForm} />
           </div>
-        </div>
-      </form>
+      </div>
+
       <div></div>
     </main>
   )
