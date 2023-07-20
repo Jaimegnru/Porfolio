@@ -17,7 +17,7 @@ export const Landing = () => {
       <header className="flex flex-row justify-evenly gap-3 bg-sky-200 w-full overflow-auto">
         <Button text="INICIO" onClick={() => navigate('/')} />
         <Button text="ESTUDIOS" />
-        <Button text="EXPERIENCIAS" />
+        <Button text="EXPERIENCIAS" onClick={() => navigate('/experiencias')}/>
         <Button text="CONTACTO" />
         <Button text="WEATHER" onClick={() => navigate('/weather')}/>
         <Button text="LOGIN" onClick={() => navigate('/login')} />
