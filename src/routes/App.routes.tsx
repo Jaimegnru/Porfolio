@@ -5,6 +5,7 @@ import { Registro } from '../pages/Register.page';
 import { Weather } from '../pages/Weather.page'
 import { ProtectedRoutes } from './Protected.routes'
 import { Experiencias } from '../pages/Experiencias.page';
+import { Contacto } from '../pages/Contacto.page';
 
 
 export const AppRoutes = () => {
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
             <Route path='/registro' element={<Registro />} />
             <Route path='/weather' element={<Weather />} />
             <Route path='experiencias' element={<Experiencias />} />
+            <Route path='contacto' element={<Contacto/>} />
 
             <Route element={<ProtectedRoutes/>}>
                 <Route path='/weather' element={<Weather />} />

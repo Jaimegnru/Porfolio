@@ -172,7 +172,7 @@ export const Weather = () => {
         <Button text="INICIO" onClick={() => navigate('/')} />
         <Button text="ESTUDIOS" />
         <Button text="EXPERIENCIAS" onClick={() => navigate('/experiencias')}/>
-        <Button text="CONTACTO" />
+        <Button text="CONTACTO" onClick={() => navigate('/contacto')}/>
         <Button text="WEATHER" onClick={() => navigate('/weather')} />
         <Button text="LOGIN" onClick={() => navigate('/login')} />
       </header>
