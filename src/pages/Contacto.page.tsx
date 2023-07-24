@@ -1,5 +1,6 @@
 import { ContactMe } from "../components/atoms/ContactMe/ContactMe.component";
 import { ContactMeForm } from "../components/atoms/ContactMeForm/ContactMeForm.component";
+import { Footer } from "../components/atoms/Footers/Footers.component";
 import { Header } from "../components/atoms/Header/Header.component";
 
 export const Contacto = () => {
@@ -12,6 +13,7 @@ export const Contacto = () => {
           <ContactMeForm />
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import { IconButton } from "@mui/material"
 import { Header } from "../components/atoms/Header/Header.component";
+import { Footer } from "../components/atoms/Footers/Footers.component";
 
 export const Landing = () => {
 
@@ -33,6 +34,7 @@ export const Landing = () => {
           </div>
         </div>
     </main>
-    </div>
+    <Footer/>
+  </div>
   )
 }

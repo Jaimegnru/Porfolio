@@ -4,6 +4,7 @@ import { useForm } from "../hooks/useForm.hooks";
 import { useNavigate } from "react-router-dom";
 import { FormEvent } from 'react';
 import { Header } from "../components/atoms/Header/Header.component";
+import { Footer } from "../components/atoms/Footers/Footers.component";
 
 export interface User {
   name: string;
@@ -70,6 +71,7 @@ export const Registro = () => {
             </div>
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }

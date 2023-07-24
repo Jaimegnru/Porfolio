@@ -2,6 +2,7 @@
 import image_CompSto from "../assets/computerStore.png"
 import image_sermicro from "../assets/sermicro.png"
 import image_sprinter from "../assets/sprinter.png"
+import { Footer } from "../components/atoms/Footers/Footers.component";
 
 import { Header } from '../components/atoms/Header/Header.component';
 
@@ -39,6 +40,7 @@ export const Experiencias = () => {
                     </div>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FormEvent, useContext } from "react";
 import { AppContext } from "../contexts/App.contexts";
 import { Header } from "../components/atoms/Header/Header.component";
+import { Footer } from "../components/atoms/Footers/Footers.component";
 
 export interface LoginResponse {
     user: User;
@@ -80,6 +81,7 @@ export const Login = () => {
                     </div>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }

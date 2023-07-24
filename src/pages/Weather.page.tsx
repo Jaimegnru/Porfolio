@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch.hooks";
 import { Label } from "../components/atoms/label/Label.Components";
 import { Button } from "../components/atoms/button/button.components";
 import { Header } from "../components/atoms/Header/Header.component";
+import { Footer } from "../components/atoms/Footers/Footers.component";
 
 export interface Tiempo {
   location: Location;
@@ -197,6 +198,7 @@ export const Weather = () => {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   )
 }
