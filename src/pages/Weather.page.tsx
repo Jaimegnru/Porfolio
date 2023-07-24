@@ -2,7 +2,7 @@ import {  useState } from "react";
 import { useFetch } from "../hooks/useFetch.hooks";
 import { Label } from "../components/atoms/label/Label.Components";
 import { Button } from "../components/atoms/button/button.components";
-import { useNavigate } from "react-router-dom"
+import { Header } from "../components/atoms/Header/Header.component";
 
 export interface Tiempo {
   location: Location;
@@ -161,49 +161,42 @@ export interface Location {
 
 
 export const Weather = () => {
-  const navigate = useNavigate();
   const [dato, setDato] = useState<string>("Cáceres")
   const { tiempo, fetchTiempo } = useFetch<Tiempo>({ url: `http://api.weatherapi.com/v1/forecast.json?key=a0aa178ee590492fae982156231307&q=${dato}&days=5&aqi=no&alerts=no` })
 
 
   return (
-    <main className="items-center justify-between bg-sky-100 w-screen h-screen flex flex-col ">
-      <header className="flex flex-row justify-evenly gap-3 bg-sky-200 w-full overflow-auto">
-        <Button text="INICIO" onClick={() => navigate('/')} />
-        <Button text="ESTUDIOS" />
-        <Button text="EXPERIENCIAS" onClick={() => navigate('/experiencias')}/>
-        <Button text="CONTACTO" onClick={() => navigate('/contacto')}/>
-        <Button text="WEATHER" onClick={() => navigate('/weather')} />
-        <Button text="LOGIN" onClick={() => navigate('/login')} />
-      </header>
-      <div className="flex flex-col justify-between p-5 rounded bg-sky-200 w-3/6 h-3/6 border-4 border-cyan-700 border-solid">
-        <div className="flex flex-row w-full justify-between items-center text-center">
-          <h1 className="text-4xl font-bold text-center text-sky-600">{tiempo?.location.name}</h1>
-          <h1 className="text-4xl font-bold text-center text-sky-600">{tiempo?.current.temp_c}º</h1>
-          <img src={tiempo?.current.condition.icon} alt={tiempo?.current.condition.text} />
-        </div>
-        <div className="flex flex-row w-full gap-3 justify-between">
-          {
-            tiempo?.forecast.forecastday.map((dia, index) => (
-              <div className="border-4 border-cyan-700 border-solid rounded-lg" key={index}>
-                <h1 className="text-sky-600 font-semibold text-center">{dia.date}</h1>
-                <img src={dia.day.condition.icon} alt={tiempo?.current.condition.text} />
-                <h1>máximas: {dia.day.maxtemp_c}º</h1>
-                <h1>mínimas: {dia.day.mintemp_c}º</h1>
-              </div>
-            ))
-          }
-        </div>
-        <div className="flex flex-row justify-between">
-          <div>
-            <Label name="Ciudad" type="text" label="Ciudad " value={dato} onChange={(e) => setDato(e.target.value)} />
+    <div className="max-h-screen h-[calc(100vh-80px)] w-screen bg-sky-100">
+      <Header />
+      <main className="flex flex-col sm:flex-col h-full items-center justify-center mt-20 p-2 gap-20 ">
+        <div className="flex flex-col justify-between p-5 rounded bg-sky-200 w-full sm:w-4/6 h-3/6 border-4 border-cyan-700 border-solid">
+          <div className="flex flex-row w-full justify-between items-center text-center">
+            <h1 className="text-4xl font-bold text-center text-sky-600">{tiempo?.location.name}</h1>
+            <h1 className="text-4xl font-bold text-center text-sky-600">{tiempo?.current.temp_c}º</h1>
+            <img src={tiempo?.current.condition.icon} alt={tiempo?.current.condition.text} />
           </div>
-          <div>
-            <Button text="Busca el tiempo" variant="filled" onClick={fetchTiempo} />
+          <div className="flex flex-row w-full gap-3 justify-between overflow-x-auto">
+            {
+              tiempo?.forecast.forecastday.map((dia, index) => (
+                <div className="border-4 border-cyan-700 border-solid rounded-lg" key={index}>
+                  <h1 className="text-sky-600 font-semibold text-center">{dia.date}</h1>
+                  <img src={dia.day.condition.icon} alt={tiempo?.current.condition.text} />
+                  <h1>máximas: {dia.day.maxtemp_c}º</h1>
+                  <h1>mínimas: {dia.day.mintemp_c}º</h1>
+                </div>
+              ))
+            }
+          </div>
+          <div className="flex flex-col sm:flex-row justify-between w-full">
+            <div>
+              <Label name="Ciudad" type="text" label="Ciudad " value={dato} onChange={(e) => setDato(e.target.value)} />
+            </div>
+            <div>
+              <Button text="Busca el tiempo" variant="filled" onClick={fetchTiempo} />
+            </div>
           </div>
         </div>
-      </div>
-      <div></div>
-    </main>
+      </main>
+    </div>
   )
 }
