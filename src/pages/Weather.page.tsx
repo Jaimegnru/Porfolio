@@ -163,7 +163,7 @@ export interface Location {
 
 export const Weather = () => {
   const [dato, setDato] = useState<string>("Cáceres")
-  const { tiempo, fetchTiempo } = useFetch<Tiempo>({ url: `http://api.weatherapi.com/v1/forecast.json?key=a0aa178ee590492fae982156231307&q=${dato}&days=5&aqi=no&alerts=no` })
+  const { tiempo, fetchTiempo } = useFetch<Tiempo>({ url: `https://api.weatherapi.com/v1/forecast.json?key=a0aa178ee590492fae982156231307&q=${dato}&days=5&aqi=no&alerts=no` })
 
 
   return (
