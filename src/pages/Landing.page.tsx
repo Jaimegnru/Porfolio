@@ -2,6 +2,7 @@ import image_ava from "../assets/avatar.png"
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import { IconButton } from "@mui/material"
 import { Header } from "../components/atoms/Header/Header.component";
@@ -28,6 +29,7 @@ export const Landing = () => {
             <IconButton size="large" href="https://instagram.com/jaimee_gnru21?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><InstagramIcon fontSize="large" className="text-sky-600" /></IconButton>
             <IconButton size="large" href="https://twitter.com/jaimegnru?s=21&t=Hd0CUjY2wJ7Gsxszw602xQ" target="_blank"><TwitterIcon fontSize="large" className="text-sky-600"/></IconButton>
             <IconButton size="large" href="https://www.linkedin.com/in/jaime-gal%C3%A1n-rubio-b703481a3/?originalSubdomain=es" target="_blank"><LinkedInIcon fontSize="large" className="text-sky-600"/></IconButton>
+            <IconButton size="large" href="https://github.com/Jaimegnru" target="_blank"><GitHubIcon fontSize="large" className="text-sky-600"/></IconButton>
           </div>
         </div>
     </main>
